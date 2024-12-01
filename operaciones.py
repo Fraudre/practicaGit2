@@ -1,3 +1,7 @@
+<<<<<<< HEAD
+
+=======
+>>>>>>> release/prueba1
 def validar_numeros(a, b):
     """
     Valida que ambos parámetros sean de tipo int o float.
@@ -26,8 +30,12 @@ def multiplicar(a, b):
     La multiplicación se implementa como suma repetida.
     """
     validar_numeros(a, b)
+<<<<<<< HEAD
+    
+=======
    
     # Convierte los números a positivos para manejar todos los casos
+>>>>>>> release/prueba1
     negativo = False
     if a < 0 and b < 0:
         a, b = -a, -b
@@ -36,8 +44,39 @@ def multiplicar(a, b):
         a, b = abs(a), abs(b)
 
     resultado = 0
+<<<<<<< HEAD
+    for _ in range(int(b)):
+        resultado += a
+
+    return -resultado if negativo else resultado
+
+def dividir(a, b):
+    """
+    Divide dos valores sin usar el operador "/".
+    Implementa la división como resta iterativa.
+    """
+    validar_numeros(a, b)
+    
+    if b == 0:
+        raise ZeroDivisionError("No se puede dividir entre cero.")
+
+    negativo = False
+    if a < 0 and b < 0:
+        a, b = -a, -b
+    elif a < 0 or b < 0:
+        negativo = True
+        a, b = abs(a), abs(b)
+
+    cociente = 0
+    while a >= b:
+        a -= b
+        cociente += 1
+
+    return -cociente if negativo else cociente
+=======
     for _ in range(int(b)):  # Suma `a`, `b` veces
         resultado += a
 
     # Si uno de los números era negativo, el resultado será negativo
     return -resultado if negativo else resultado
+>>>>>>> release/prueba1
