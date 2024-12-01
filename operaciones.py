@@ -80,3 +80,20 @@ def dividir(a, b):
     # Si uno de los números era negativo, el resultado será negativo
     return -resultado if negativo else resultado
 >>>>>>> f527361d08d930595bb32a4f6b566f1eceb9ff4c
+
+def factorial_iterativo(n):
+    """
+    Calcula el factorial de un número de forma iterativa.
+    :param n: El número para calcular su factorial (debe ser un entero no negativo).
+    :return: El factorial del número.
+    :raises ValueError: Si el número no es un entero o es negativo.
+    """
+    if not isinstance(n, int):
+        raise ValueError("El número debe ser un entero.")
+    if n < 0:
+        raise ValueError("El número no puede ser negativo.")
+    
+    factorial = 1
+    for i in range(1, n + 1):
+        factorial *= i
+    return factorial
