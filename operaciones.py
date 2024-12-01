@@ -80,3 +80,18 @@ def dividir(a, b):
     # Si uno de los números era negativo, el resultado será negativo
     return -resultado if negativo else resultado
 >>>>>>> release/prueba1
+
+def factorial_recursivo(n):
+    """
+    Calcula el factorial de un número de forma recursiva.
+    :param n: El número para calcular su factorial (debe ser un entero no negativo).
+    :return: El factorial del número.
+    :raises ValueError: Si el número no es un entero o es negativo.
+    """
+    if not isinstance(n, int):
+        raise ValueError("El número debe ser un entero.")
+    if n < 0:
+        raise ValueError("El número no puede ser negativo.")
+    if n == 0 or n == 1:
+        return 1
+    return n * factorial_recursivo(n - 1)
