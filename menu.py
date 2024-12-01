@@ -1,4 +1,4 @@
-from operaciones import sumar, restar, multiplicar, dividir, factorial_recursivo
+from operaciones import sumar, restar, multiplicar, dividir, factorial_recursivo, fibonacci
 
 def mostrar_menu():
     """
@@ -11,7 +11,8 @@ def mostrar_menu():
         print("3 - Multiplicar")
         print("4 - Dividir")
         print("5 - Salir")
-        print("6 - Calcular el factorial de un número (recursivo)")  # Opción con número repetido
+        print("6 - Calcular el factorial de un número (recursivo)")
+        print("8 - Calcular el Fibonacci de un número (iterativo)")  # Nueva opción para Fibonacci
        
         opcion = input("Introduce una opción: ")
 
@@ -50,7 +51,6 @@ def mostrar_menu():
                 print(f"Error: {e}")
 
         elif opcion == "6":
-            # Calcular el factorial de un número recursivamente
             try:
                 n = int(input("Introduce un número entero no negativo: "))
                 resultado = factorial_recursivo(n)
@@ -58,8 +58,17 @@ def mostrar_menu():
             except ValueError as e:
                 print(f"Error: {e}")
 
+        elif opcion == "8":
+            # Calcular el número de Fibonacci iterativo
+            try:
+                n = int(input("Introduce un número entero no negativo: "))
+                resultado = fibonacci(n)
+                print(f"El número de Fibonacci en la posición {n} es: {resultado}")
+            except ValueError as e:
+                print(f"Error: {e}")
+
         elif opcion == "5":
             print("Saliendo del programa. ¡Hasta pronto!")
             break
         else:
-            print("Opción no válida. Por favor, selecciona una opción entre 1 y 6.")
+            print("Opción no válida. Por favor, selecciona una opción entre 1 y 8.")

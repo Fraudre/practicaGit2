@@ -95,3 +95,20 @@ def factorial_recursivo(n):
     if n == 0 or n == 1:
         return 1
     return n * factorial_recursivo(n - 1)
+
+def fibonacci(n):
+    """
+    Calcula el número de Fibonacci de forma iterativa.
+    :param n: El índice para calcular su valor de Fibonacci (debe ser un entero no negativo).
+    :return: El número de Fibonacci correspondiente al índice dado.
+    :raises ValueError: Si el número no es un entero o es negativo.
+    """
+    if not isinstance(n, int):
+        raise ValueError("El número debe ser un entero.")
+    if n < 0:
+        raise ValueError("El número no puede ser negativo.")
+   
+    a, b = 0, 1
+    for _ in range(n):
+        a, b = b, a + b
+    return a
